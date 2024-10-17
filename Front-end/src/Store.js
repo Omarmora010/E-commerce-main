@@ -18,7 +18,6 @@ const loadCartFromStorage = () => {
     }
     return JSON.parse(serializedCart);
   } catch (err) {
-    console.error("Error loading cart from localStorage", err);
     return [];
   }
 };

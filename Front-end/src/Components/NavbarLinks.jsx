@@ -2,7 +2,7 @@
 
 import { useNavigate } from "react-router-dom";
 
-function NavbarLinks({ type, setClose }) {
+function NavbarLinks({ type }) {
   const nav = useNavigate();
   if (type === "col")
     return (
@@ -36,12 +36,6 @@ function NavbarLinks({ type, setClose }) {
             Orders
           </li>
         </ul>
-        <button
-          onClick={() => setClose(false)}
-          className="bg-white px-2 text-black rounded-3xl pb-1 cursor-pointer hover:bg-red-500 hover:text-white"
-        >
-          x
-        </button>
       </div>
     );
   else {
@@ -63,7 +57,7 @@ function NavbarLinks({ type, setClose }) {
           onClick={() => nav("/")}
           className="hover:text-gray-400 duration-300 ease-in-out transition-all cursor-pointer"
         >
-          <a href="#category">catogories</a>
+          <a href="#category">categories</a>
         </li>
         <li
           onClick={() => nav("/verify")}

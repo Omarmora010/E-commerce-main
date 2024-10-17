@@ -29,15 +29,8 @@ function StarRating({
   size = 48,
   className = "",
   defaultRating = 0,
-  text = false,
   onSetrating,
 }) {
-  const textStyle = {
-    margin: "0",
-    LineHeight: "1",
-    color: "gray",
-    fontSize: `${size / 1.5}px`,
-  };
   function handlerating(rating) {
     Setrating(rating);
     onSetrating(rating);
@@ -60,10 +53,6 @@ function StarRating({
           />
         ))}
       </div>
-      <p style={textStyle}>
-        {text && (Temprating || `${rating}/` || "")}{" "}
-        <span className="text-mblack">{maxrating}</span>
-      </p>
     </div>
   );
 }

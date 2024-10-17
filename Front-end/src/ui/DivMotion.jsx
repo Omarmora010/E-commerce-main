@@ -22,6 +22,7 @@ function DivMotion({ children }) {
   return (
     <div>
       <motion.div
+        className="hidden md:block"
         variants={boxVariant}
         ref={ref}
         initial="hidden"
@@ -30,6 +31,8 @@ function DivMotion({ children }) {
       >
         {children}
       </motion.div>
+
+      <div className="block md:hidden ">{children}</div>
     </div>
   );
 }

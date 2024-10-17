@@ -4,7 +4,6 @@ import Button from "../../ui/Button";
 import DivMotion from "../../ui/DivMotion";
 import Frames from "./Frames";
 // import HeroFooter from "./HeroFooter";
-import { islogged } from "../../services/Auth";
 
 function HeroSection() {
   const nav = useNavigate();
@@ -29,7 +28,7 @@ function HeroSection() {
                 type={"black"}
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
-                  islogged() ? nav("/products") : nav("/login");
+                  nav("/products");
                 }}
               >
                 Shop Now

@@ -16,10 +16,8 @@ const onSignUpSubmit = async (data) => {
   try {
     // await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await registerUser(data);
-    console.log("data sent to backend", res);
     return res;
   } catch (err) {
-    console.log(err);
     return false;
   }
 };
@@ -113,7 +111,7 @@ function SignUpForm() {
       <div className="text-center">
         <pre>
           <span className="font-bold text-lg">OR</span> <br />
-          Sing up with
+          Sign up with
         </pre>
       </div>
       <div className="flex justify-around">

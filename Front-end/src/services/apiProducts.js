@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import { backendUrl } from "../App";
 import Cookies from "js-cookie";
+import { islogged } from "./Auth";
 
 export async function getProduct(id) {
   const token = Cookies.get("Token");
@@ -10,7 +11,7 @@ export async function getProduct(id) {
     {
       method: "GET", // or 'POST' if you're sending data
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: islogged() ? `Bearer ${token}` : ``,
         "Content-Type": "application/json",
       },
     }
@@ -19,6 +20,7 @@ export async function getProduct(id) {
   const data = await response.json();
 
   if (!response.ok) {
+    // console.log("error", data);
     toast.error(`${data.message}`);
     throw new Error("Failed to register user: " + data.message);
   }
@@ -42,6 +44,5 @@ export async function getProducts() {
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
-  // console.log("query data : ", data);
   return data.products;
 }

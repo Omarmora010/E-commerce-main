@@ -20,7 +20,6 @@ export async function getOrders(userId) {
 
   const data = await response.json();
 
-  console.log(data);
 
   if (!response.ok) {
     toast.error(`${data.message}`);
@@ -28,6 +27,5 @@ export async function getOrders(userId) {
   }
 
   const orders = data.orders;
-  console.log("orders:", orders);
   return orders; // Return the response data
 }

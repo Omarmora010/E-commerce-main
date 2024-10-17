@@ -15,10 +15,8 @@ function AppLayout() {
   useEffect(() => {
     if (document.readyState === "complete") {
       handleLoading();
-      console.log("Document is already ready");
     } else {
       window.addEventListener("load", handleLoading);
-      console.log("Event listener added for load event");
     }
 
     return () => {

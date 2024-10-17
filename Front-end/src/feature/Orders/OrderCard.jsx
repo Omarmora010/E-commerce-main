@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-// import StarRating from "../../ui/StarRating";
-// import { formatCurrency } from "../../utils/helper";
 
 import Cookies from "js-cookie";
 import { FaCheckCircle } from "react-icons/fa";
@@ -11,7 +9,6 @@ import { Link } from "react-router-dom";
 
 function OrderCard({ index, order }) {
   const username = Cookies.get("username");
-//   console.log("new", order._id);
   return (
     <div className="text-start flex-col h-full gap-5 p-0 justify-between relative">
       <div className="bg-stone-600 flex justify-center rounded-md rounded-bl-none rounded-br-none p-1">

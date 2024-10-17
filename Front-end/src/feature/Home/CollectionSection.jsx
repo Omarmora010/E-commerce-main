@@ -17,21 +17,22 @@ function CollectionSection({ data, title }) {
         <h1 className="font-extrabold text-5xl uppercase mb-10">{title}</h1>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 items-center">
           {Coll_data?.map((item, index) => (
-            <CollectionCard
-              img={islogged() ? item.image[0] : item.image}
-              price={item.price}
-              rating={Math.floor(Math.random() * (5 - 4) + 4)}
-              title={item.name}
-              key={index}
-            />
+            <Link
+              to={islogged() ? `/product/${item._id}` : `/signup`}
+              key={item._id}
+            >
+              <CollectionCard
+                img={item.image[0]}
+                price={item.price}
+                rating={Math.floor(Math.random() * (5 - 4) + 4)}
+                title={item.name}
+                key={index}
+              />
+            </Link>
           ))}
         </div>
         <Button type={"white"}>
-          {islogged() ? (
-            <Link to={"/BestSeller"}> View All</Link>
-          ) : (
-            <Link to={"/signup"}> View All</Link>
-          )}
+          <Link to={"/BestSeller"}> View All</Link>
         </Button>
       </div>
     </DivMotion>

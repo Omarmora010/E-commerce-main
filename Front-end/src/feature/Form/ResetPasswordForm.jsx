@@ -18,10 +18,8 @@ const onResetPassSubmit = async (data, token) => {
   try {
     // await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await ResetPassAPI(data, token);
-    console.log("data is sent to backend", res);
     return res;
   } catch (err) {
-    console.log(err);
     return false;
   }
 };
@@ -38,7 +36,6 @@ function ResetPassForm() {
     <form
       className="space-y-4 md:space-y-6 text-right"
       onSubmit={ResetPassHook.handleSubmit(async (data) => {
-        console.log(token);
         const res = await onResetPassSubmit(data, token);
 
         if (res.status === "success") {

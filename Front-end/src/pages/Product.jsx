@@ -5,7 +5,6 @@ import Spinner from "../ui/Spinner";
 function Product() {
   const { Products, isLoading } = useProducts();
   if (isLoading) return <Spinner />;
-  console.log(Products);
   return (
     <div className="grid grid-cols-4 container justify-center">
       {Products.map((item) => (

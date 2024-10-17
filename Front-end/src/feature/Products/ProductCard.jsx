@@ -24,7 +24,6 @@ function ProductCard({ id, img, title, price }) {
             size={24}
             key={1234}
             defaultRating={Math.floor(Math.random() * (5 - 2) + 2) }
-            text={true}
           />
         </div>
         {/* price */}

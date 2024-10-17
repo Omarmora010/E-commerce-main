@@ -11,8 +11,5 @@ export function useOrderList(userId) {
     queryKey: ["OrderList", userId],
     queryFn: () => getOrders(userId),
   });
-
-  console.log("orders in cutomHook", Orders);
-
   return { isLoading, error, Orders };
 }

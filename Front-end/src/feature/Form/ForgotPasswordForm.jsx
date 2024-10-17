@@ -16,10 +16,8 @@ const onForgotPassSubmit = async (data) => {
   try {
     // await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await ForgotPassAPI(data);
-    console.log("data is sent to backend", res);
     return res;
   } catch (err) {
-    console.log(err);
     return false;
   }
 };

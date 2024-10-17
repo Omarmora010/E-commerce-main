@@ -45,7 +45,7 @@ function Categories() {
             {/* make it dynamic */}
             <li>{`Home >`}</li>
             <li>{`Shop >`}</li>
-            <li>{`Men >`}</li>
+            <li>{`${type}`}</li>
           </ul>
         </div>
 

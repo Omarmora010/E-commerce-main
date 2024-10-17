@@ -33,7 +33,6 @@ const addProduct = async (req, res) => {
           });
           return result.secure_url;
         } catch (uploadError) {
-          console.error("Cloudinary upload error:", uploadError);
           throw new Error("Error uploading image to Cloudinary.");
         }
       })
@@ -52,7 +51,6 @@ const addProduct = async (req, res) => {
       date: Date.now(),
     };
 
-    console.log("Product data to save:", productData);
 
     // Save the product
     const product = new productModel(productData);
@@ -60,7 +58,6 @@ const addProduct = async (req, res) => {
 
     res.json({ success: true, message: "Product added successfully." });
   } catch (error) {
-    console.error("Error adding product:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
@@ -71,7 +68,6 @@ const listProduct = async (req, res) => {
     const products = await productModel.find({});
     res.json({ success: true, products });
   } catch (error) {
-    console.error("Error fetching products:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
@@ -87,7 +83,6 @@ const removeProduct = async (req, res) => {
     await productModel.findByIdAndDelete(productId);
     res.json({ success: true, message: "Product removed successfully." });
   } catch (error) {
-    console.error("Error removing product:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
@@ -102,7 +97,6 @@ const singleProduct = async (req, res) => {
     }
     res.json({ success: true, product });
   } catch (error) {
-    console.error("Error fetching single product:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

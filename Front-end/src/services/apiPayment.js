@@ -7,7 +7,6 @@ import { backendUrl } from "../App";
 export async function payCOD(orderData, cartData) {
   const token = Cookies.get("Token");
 
-  console.log("orderData", orderData);
   const address = {
     address: orderData.address,
     city: orderData.city,
@@ -33,7 +32,6 @@ export async function payCOD(orderData, cartData) {
   });
 
   const data = await response.json();
-  console.log(data);
 
   if (!response.ok) {
     toast.error(`${data.message}`);
@@ -44,7 +42,6 @@ export async function payCOD(orderData, cartData) {
 }
 
 export async function payStripe(orderData, cartData) {
-  // console.log("orderData", orderData);
   const token = Cookies.get("Token");
   const address = {
     address: orderData.address,
@@ -70,7 +67,6 @@ export async function payStripe(orderData, cartData) {
   });
 
   const data = await response.json();
-  console.log("response from data base: ", data);
 
   if (!response.ok) {
     toast.error(`${data.message}`);

@@ -38,7 +38,6 @@ function ProductDetails() {
   const [active, setActive] = useState(1);
   const [size, setSize] = useState("");
   const [count, setCount] = useState(1);
-  // console.log("here:", Product);
 
   // SHOW MORE
 
@@ -78,8 +77,8 @@ function ProductDetails() {
         <ul className="flex  gap-2">
           <li>{`Home >`}</li>
           <li>{`Shop >`}</li>
-          <li>{`${Product.category} >`}</li>
-          <li className="max-w-56 max-h-7 md:max-w-96 truncate">{`${Product.name
+          <li>{`${Product?.category} >`}</li>
+          <li className="max-w-56 max-h-7 md:max-w-96 truncate">{`${Product?.name
             .split(" ")
             .slice(-4)
             .join(" ")}`}</li>
@@ -88,7 +87,7 @@ function ProductDetails() {
       <div className="flex-col flex gap-3  justify-center md:grid md:grid-cols-6 md:gap-3 md:justify-start ">
         <div className="md:col-span-1 md:flex  md:items-start  ">
           <div className="flex-col hidden md:flex gap-3 md:justify-start md:items-center mt-32 ">
-            {Product.image.map((url, index) => {
+            {Product?.image.map((url, index) => {
               return (
                 <img
                   src={url}
@@ -108,7 +107,7 @@ function ProductDetails() {
         </div>
         <div className="col-span-2 rounded-xl w-full hidden  md:flex justify-center md:items-start  ">
           <img
-            src={activeimg || Product.image[0]}
+            src={activeimg || Product?.image[0]}
             alt={`img 1 for product id ${id}`}
             className={`w-2/3 rounded-xl md:mt-20`}
           />
@@ -116,14 +115,14 @@ function ProductDetails() {
         {/* responsive images */}
         <div className="flex justify-start items-start md:hidden">
           <img
-            src={activeimg || Product.image[0]}
+            src={activeimg || Product?.image[0]}
             alt={`img 1 for product id ${id}`}
             className={`w-1/2 rounded-xl md:hidden block`}
           />
         </div>
 
         <div className="md:hidden flex  gap-3 w-60">
-          {Product.image.map((url, index) => {
+          {Product?.image.map((url, index) => {
             return (
               <img
                 src={url}
@@ -143,7 +142,7 @@ function ProductDetails() {
         <div className="md:col-span-3 space-y-2 md:space-y-6">
           <div className="space-y-3 border-b border-gray-300 pb-3 md:pb-6">
             <h1 className="font-extrabold text-2xl md:text-4xl ">
-              {Product.name}
+              {Product?.name}
             </h1>
             <StarRating
               maxrating={5}
@@ -152,7 +151,7 @@ function ProductDetails() {
               text={true}
             />
             <div className="font-bold text-2xl">
-              {formatCurrency(Product.price)}
+              {formatCurrency(Product?.price)}
             </div>
             <p className="text-xs md:text-sm w-2/3 text-gray-500 ">
               <ShowMore
@@ -161,7 +160,7 @@ function ProductDetails() {
                 more={<MyMoreButton onClick={toggleLines} />}
                 less={<MyLessButton onClick={toggleLines} />}
               >
-                {Product.description}
+                {Product?.description}
               </ShowMore>
             </p>
           </div>
@@ -172,7 +171,7 @@ function ProductDetails() {
               <SizeButtons
                 size={size}
                 setSize={setSize}
-                sizes={Product.sizes}
+                sizes={Product?.sizes}
               />
             </div>
           </div>

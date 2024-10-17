@@ -3,20 +3,15 @@ import Spinner from "../ui/Spinner";
 import Pagination from "../ui/Pagination";
 import { useState } from "react";
 import { PAGE_SIZE } from "../utils/constance";
-// import ProductCard from "../feature/Products/ProductCard";
-// import ProductsCollection from "../feature/Products/ProductsCollections";
 import { Link } from "react-router-dom";
 import { useOrderList } from "../feature/Orders/useOrderList";
-// import SmallCart from "../feature/Cart/SmallCart";
 import OrdersCollection from "../feature/Orders/OrdersCollection";
-// import { backendUrl } from "../App";
-// import CollectionCard from "../feature/Home/CollectionCard";
+
 
 function UserOrders() {
   const userId = Cookies.get("userId");
 
   const { Orders, isLoading } = useOrderList(userId);
-  console.log("orders in user orders page: ", Orders);
   //   const bestSellerData = Products?.filter((item) => item.bestseller === true);
 
   const [currentPage, setCurrentPage] = useState(1);

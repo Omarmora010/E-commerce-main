@@ -24,16 +24,15 @@ const onPaySubmit = async (selected, cart, data) => {
     // await new Promise((resolve) => setTimeout(resolve, 1000));
     let res;
     if (selected === 1) {
-      console.log("we pay using stripe");
       res = await payStripe(data, cart);
     } else {
       res = await payCOD(data, cart);
     }
 
-    console.log("data is sent to backend", res);
+
     return res;
   } catch (err) {
-    console.log(err);
+
     return false;
   }
 };
@@ -64,9 +63,6 @@ function PaymentForm({ setPayForm, orderSummary }) {
 
         if (res.success) {
           const stripe = selected == 1;
-          console.log("stripe", stripe);
-          console.log("setpayform", setPayForm);
-          console.log("clearcart", clearCart());
 
           payHook.reset();
           toast.success(`order Placed Successfullly`);

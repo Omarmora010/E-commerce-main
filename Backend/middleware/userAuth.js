@@ -13,11 +13,10 @@ const userAuthorized = asyncErrorHandler(async (req, res, next) => {
   ) {
     return next(new CustomError("authorization token is missing", 401));
   }
-  // console.log("req.headers", req.headers);
 
   //extract the token
   const token = req.headers.authorization.split(" ")[1];
-  console.log("token: ", token);
+ 
   //verify the token
   const decodedToken = await util.promisify(jwt.verify)(
     token,

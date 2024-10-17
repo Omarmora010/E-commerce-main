@@ -74,7 +74,6 @@ UserModelSchema.methods.isPassowordChanged = function (jwtTimeStamp) {
   if (this.passwordChangedAt) {
     const passwordChangedTimeStamp =
       parseInt(this.passwordChangedAt.getTime(), 10) / 1000;
-    // console.log(passwordChangedTimeStamp, jwtTimeStamp);
     return jwtTimeStamp < passwordChangedTimeStamp;
   }
   return false;

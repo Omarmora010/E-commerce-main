@@ -14,10 +14,8 @@ const onLoginSubmit = async (data) => {
   try {
     // await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await logInUser(data);
-    console.log("data sent to backend", res);
     return res;
   } catch (err) {
-    console.log(err);
     return false;
   }
 };

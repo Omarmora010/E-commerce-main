@@ -6,9 +6,7 @@ import sendEmail from "../utils/email.js";
 import crypto from "crypto";
 
 const signToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.LOGIN_EXPIRES,
-  });
+  return jwt.sign({ id }, process.env.JWT_SECRET);
 };
 
 // user login controller
@@ -121,11 +119,9 @@ const forgotPassword = asyncErrorHandler(async (req, res, next) => {
 const resetPassword = asyncErrorHandler(async (req, res, next) => {
   //checking if reset Token provided
   let { password, confirmPassword } = req.body;
-  console.log(req.params.Token);
   if (!req.params.Token) {
     return next(new CustomError("no Token porvided, please try again"));
   }
-  console.log(password, confirmPassword);
   if (!password || !confirmPassword) {
     return next(
       new CustomError("Please Provide a password and confirm it", 400)
@@ -180,7 +176,6 @@ const adminLogin = async (req, res) => {
       res.json({ success: false, message: "invalid credentials" });
     }
   } catch (error) {
-    console.log(error);
     res.json({ success: false, message: error.message });
   }
 };

@@ -28,7 +28,6 @@ const sendEmail = async (options) => {
     const info = await transport.sendMail(emailOptions);
   } catch (error) {
     console.log("Error occurred while sending email:", error.message);
-    console.log(error.stack); // Print detailed error stack for debugging
   }
 };
 

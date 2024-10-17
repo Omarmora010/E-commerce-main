@@ -19,7 +19,6 @@ export async function registerUser(userData) {
   }
   const { token, status } = data;
   const user = data.data.newuser;
-  // console.log("User registered successfully: ", data);
   return { token, status, user }; // Return the response data
 }
 
@@ -38,9 +37,7 @@ export async function logInUser(userData) {
     toast.error(`${data.message}`);
     throw new Error("Failed to register user: " + data.message);
   }
-  // console.log("data from the server:", data);
   const { token, status } = data;
   const user = data.data.user;
-  // console.log("User logged in successfully: ", data);
   return { token, status, user }; // Return the response data
 }

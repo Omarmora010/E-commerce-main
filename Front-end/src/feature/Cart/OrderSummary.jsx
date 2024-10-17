@@ -12,8 +12,6 @@ function OrderSummary({ type, setPayForm }) {
       .map((item) => item.price * item.quantity)
       .reduce((acc, curr) => acc + curr, 0)
   );
-  console.log(totalPrice);
-
   if (type === "payment") {
     return (
       <div className="md:mt-10 grow p-10 w-full text-left  sm:mt-8 ">

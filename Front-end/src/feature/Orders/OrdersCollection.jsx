@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-// import ProductCard from "../Products/ProductCard";
-// import { Link } from "react-router-dom";
 
 import OrderCard from "./OrderCard";
 
@@ -15,7 +13,6 @@ function OrdersCollection({ firstIndex, orders }) {
           className="bg-gray-100 h-80 rounded-3xl md:max-w-72 mt-5"
         >
           {<OrderCard index={firstIndex + index + 1} order={order}></OrderCard>}
-          {/* {console.log(item)} */}
         </div>
         // </Link>
       ))}

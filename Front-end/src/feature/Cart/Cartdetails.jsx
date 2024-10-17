@@ -3,7 +3,6 @@ import SmallCart from "./SmallCart";
 
 function Cartdetails() {
   const cart = useCartStore((state) => state.cart);
-  // console.log(cart);
   return (
     <div className="w-2/3 space-y-6">
       {cart.map((item, index) => (
