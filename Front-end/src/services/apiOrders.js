@@ -1,10 +1,8 @@
-// import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 import { backendUrl } from "../App";
 import Cookies from "js-cookie";
 
 export async function getOrders(userId) {
-  //   const userId = Cookies.get("userId");
   const token = Cookies.get("Token");
 
   const response = await fetch(

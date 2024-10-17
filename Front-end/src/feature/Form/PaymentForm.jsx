@@ -55,7 +55,7 @@ function PaymentForm({ setPayForm, orderSummary }) {
       className="space-y-4 md:space-y-6 w-full md:grid md:grid-cols-2 text-right "
       onSubmit={payHook.handleSubmit(async (data) => {
         if (!selected) {
-          toast.error("please Select a payment methon");
+          toast.error("please Select a payment method");
           return;
         }
 
@@ -65,7 +65,7 @@ function PaymentForm({ setPayForm, orderSummary }) {
           const stripe = selected == 1;
 
           payHook.reset();
-          toast.success(`order Placed Successfullly`);
+          toast.success(`order Placed Successfully`);
           clearCart();
           setPayForm(false);
           if (stripe) {

@@ -5,7 +5,6 @@ import { islogged } from "./Auth";
 
 export async function getProduct(id) {
   const token = Cookies.get("Token");
-  console.log("fetching", id);
   const response = await fetch(
     backendUrl + `/api/product/single/?productId=${id}`,
     {
@@ -20,13 +19,11 @@ export async function getProduct(id) {
   const data = await response.json();
 
   if (!response.ok) {
-    // console.log("error", data);
     toast.error(`${data.message}`);
     throw new Error("Failed to register user: " + data.message);
   }
 
   const product = data.product;
-  // console.log("product:", product);
   return product; // Return the response data
 }
 

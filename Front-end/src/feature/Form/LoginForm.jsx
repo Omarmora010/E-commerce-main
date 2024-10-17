@@ -12,7 +12,6 @@ import toast from "react-hot-toast";
 
 const onLoginSubmit = async (data) => {
   try {
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await logInUser(data);
     return res;
   } catch (err) {
@@ -22,7 +21,6 @@ const onLoginSubmit = async (data) => {
 
 function LoginForm() {
   const nav = useNavigate();
-  // handleSubmit , register , formState: {error , isSubmitting}
   const LoginHook = useForm({
     resolver: zodResolver(LoginSchema),
   });

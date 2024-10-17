@@ -12,7 +12,7 @@ function NavbarLinks({ type }) {
             className="hover:text-gray-400 duration-300 ease-in-out transition-all cursor-pointer"
             onClick={() => nav("/products")}
           >
-            <a href="#home">Shop</a>
+            Shop
           </li>
 
           <li
@@ -42,10 +42,10 @@ function NavbarLinks({ type }) {
     return (
       <ul className="flex gap-16 text-xl font-bold capitalize">
         <li
-          onClick={() => nav("/")}
+          onClick={() => nav("/products")}
           className="hover:text-gray-400 duration-300 ease-in-out transition-all cursor-pointer"
         >
-          <a href="#home">Shop</a>
+          Shop
         </li>
         <li
           onClick={() => nav("/")}

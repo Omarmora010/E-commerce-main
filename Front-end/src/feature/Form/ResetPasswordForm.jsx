@@ -2,21 +2,14 @@ import { MdLock } from "react-icons/md";
 import FormInput from "./FormInput.jsx";
 import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-// import { DevTool } from "@hookform/devtools";
-// import { LoginSchema } from "../../utils/LoginSchema.js";
 import { zodResolver } from "@hookform/resolvers/zod";
 import FormError from "../../ui/FormError.jsx";
-// import { logInUser } from "../../services/apiUser.js";
-// import { logIn } from "../../services/Auth.js";
 import toast from "react-hot-toast";
-// import { ForgotPasswordSchema } from "../../utils/ForgotPasswordSchema.js";
 import { ResetPassSchema } from "../../utils/ResetPassSchema.js";
 import { ResetPassAPI } from "../../services/apiResetPassword.js";
-// import { ForgotPassAPI } from "../../services/apiResetPassword.js";
 
 const onResetPassSubmit = async (data, token) => {
   try {
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await ResetPassAPI(data, token);
     return res;
   } catch (err) {
@@ -25,8 +18,6 @@ const onResetPassSubmit = async (data, token) => {
 };
 
 function ResetPassForm() {
-  //   const nav = useNavigate();
-  // handleSubmit , register , formState: {error , isSubmitting}
   const { token } = useParams();
 
   const ResetPassHook = useForm({
@@ -40,8 +31,6 @@ function ResetPassForm() {
 
         if (res.status === "success") {
           ResetPassHook.reset();
-          //   nav(`/`);
-          //   logIn(res.user._id, res.token, res.user.name);
           toast.success(res.message);
         }
       })}

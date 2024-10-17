@@ -14,7 +14,6 @@ import toast from "react-hot-toast";
 
 const onSignUpSubmit = async (data) => {
   try {
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await registerUser(data);
     return res;
   } catch (err) {

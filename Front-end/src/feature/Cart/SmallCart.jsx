@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 function SmallCart({ id, img, name, quantity, color, size, price }) {
   const [count, setCount] = useState(quantity);
   const increaseQuantity = useCartStore((state) => state.increaseQuantity);
-  const decreaseQuantity = useCartStore((state) => state.increaseQuantity);
+  const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   return (

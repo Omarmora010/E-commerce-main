@@ -30,17 +30,10 @@ function OrderSummary({ type, setPayForm }) {
             </dl>
 
             <dl className="flex items-center justify-between gap-4">
-              <dt className="text-base font-normal text-gray-500">Savings</dt>
-              <dd className="text-base font-medium text-red-500">
-                -{formatCurrency(discount)}
-              </dd>
-            </dl>
-
-            <dl className="flex items-center justify-between gap-4">
               <dt className="text-base font-normal text-gray-500">
                 Delivery Fee
               </dt>
-              <dd className="text-base font-medium text-gray-900 ">
+              <dd className="text-base font-medium text-red-500 ">
                 {formatCurrency(delivery)}
               </dd>
             </dl>
@@ -49,7 +42,7 @@ function OrderSummary({ type, setPayForm }) {
           <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 ">
             <dt className="text-base font-bold text-gray-900 ">Total</dt>
             <dd className="text-base font-bold text-gray-900 ">
-              {formatCurrency(totalPrice - discount - delivery)}
+            {formatCurrency((totalPrice + 10) + (discount - delivery))}
             </dd>
           </dl>
         </div>
@@ -71,20 +64,12 @@ function OrderSummary({ type, setPayForm }) {
               {formatCurrency(totalPrice)}
             </dd>
           </dl>
-
-          <dl className="flex items-center justify-between gap-4">
-            <dt className="text-base font-normal text-gray-500">Savings</dt>
-            <dd className="text-base font-medium text-red-500">
-              -{formatCurrency(discount)}
-            </dd>
-          </dl>
-
           <dl className="flex items-center justify-between gap-4">
             <dt className="text-base font-normal text-gray-500">
               Delivery Fee
             </dt>
-            <dd className="text-base font-medium text-gray-900 ">
-              {formatCurrency(delivery)}
+            <dd className="text-base font-medium text-red-500 ">
+             {formatCurrency(delivery)}
             </dd>
           </dl>
         </div>
@@ -92,7 +77,7 @@ function OrderSummary({ type, setPayForm }) {
         <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 ">
           <dt className="text-base font-bold text-gray-900 ">Total</dt>
           <dd className="text-base font-bold text-gray-900 ">
-            {formatCurrency(totalPrice - discount - delivery)}
+            {formatCurrency((totalPrice + 10) + (discount - delivery))}
           </dd>
         </dl>
       </div>
