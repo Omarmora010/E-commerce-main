@@ -1,5 +1,8 @@
 # E-commerce
 
+Ecoomerce Live Link : https://coder-fit.vercel.app/
+Admin Panel Live Link : https://coder-admin.vercel.app/
+
 DEPI final Project
 
 Typical file system for eCommerce web aplication
